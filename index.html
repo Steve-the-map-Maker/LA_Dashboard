@@ -1,0 +1,63 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MapLibre Web App</title>
+  <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.css">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
+  <style>
+      body, html {
+          margin: 0;
+          padding: 0;
+          height: 100%;
+      }
+      #map {
+          width: 100%;
+          height: 70%;
+      }
+      #table-container {
+          height: 30%;
+          overflow-y: auto;
+          border-top: 1px solid #ddd;
+          background: white;
+      }
+      tr.selected {
+          background-color: #ffeeba;
+      }
+  </style>
+</head>
+<body>
+    <div id="map"></div>
+    <div id="layer-control" style="position: absolute; top: 10px; left: 10px; background: white; padding: 10px; z-index: 1; border-radius: 5px;">
+        <h4>Layer Controls</h4>
+        <label><input type="checkbox" id="toggle-neighborhoods" checked> Neighborhoods</label><br>
+        <label><input type="checkbox" id="toggle-food" checked> Food Points</label><br>
+    </div>
+    
+
+    <div id="table-container">
+      <table id="data-table" class="display">
+          <thead>
+              <tr>
+                  <th>Name</th>
+                  <th>Type</th>
+                  <th>Category</th>
+                  <th>Address</th>
+                  <th>Enrollment</th>
+              </tr>
+          </thead>
+          <tbody>
+              <!-- Rows will be dynamically added here -->
+          </tbody>
+      </table>
+  </div>
+
+  
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+  <script src="https://unpkg.com/maplibre-gl@latest/dist/maplibre-gl.js"></script>
+  <script src="map.js"></script>
+  <script src="data.js"></script>
+  <script src="toggle.js"></script>
+  <script src="table.js"></script>
+</body>
